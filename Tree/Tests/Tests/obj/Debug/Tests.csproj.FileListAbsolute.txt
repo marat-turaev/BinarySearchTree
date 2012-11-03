@@ -1,0 +1,5 @@
+C:\Prog\AgileCourse\Lab1\Tree\Tests\Tests\bin\Debug\Tests.dll
+C:\Prog\AgileCourse\Lab1\Tree\Tests\Tests\bin\Debug\Tests.pdb
+C:\Prog\AgileCourse\Lab1\Tree\Tests\Tests\obj\Debug\Tests.csprojResolveAssemblyReference.cache
+C:\Prog\AgileCourse\Lab1\Tree\Tests\Tests\obj\Debug\Tests.dll
+C:\Prog\AgileCourse\Lab1\Tree\Tests\Tests\obj\Debug\Tests.pdb
