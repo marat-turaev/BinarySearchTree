@@ -28,20 +28,20 @@ namespace Domain {
         }
 
         public TValue Search(TKey key) {
-            return Find(root, key);
+            return Find(root, key).Item.Value;
         }
 
         public TValue Minimum {
-            get { return FindMin(root); }
+            get { return FindMin(root).Item.Value; }
         }
 
         public TValue Maximum {
-            get { return FindMax(root); }
+            get { return FindMax(root).Item.Value; }
         }
 
-        private static TValue Find(Node<KeyValue<TKey, TValue>> node, TKey key) {
+        private static Node<KeyValue<TKey, TValue>> Find(Node<KeyValue<TKey, TValue>> node, TKey key) {
             if (node.Item.Key.Equals(key)) {
-                return node.Item.Value;
+                return node;
             }
             if (node.Item.Key.CompareTo(key) < 0) {
                 return Find(node.Right, key);
@@ -49,12 +49,12 @@ namespace Domain {
             return Find(node.Left, key);
         }
 
-        private static TValue FindMax(Node<KeyValue<TKey, TValue>> node) {
-            return node.Right == null ? node.Item.Value : FindMax(node.Right);
+        private static Node<KeyValue<TKey, TValue>> FindMax(Node<KeyValue<TKey, TValue>> node) {
+            return node.Right == null ? node : FindMax(node.Right);
         }
 
-        private static TValue FindMin(Node<KeyValue<TKey, TValue>> node) {
-            return node.Left == null ? node.Item.Value : FindMin(node.Left);
+        private static Node<KeyValue<TKey, TValue>> FindMin(Node<KeyValue<TKey, TValue>> node) {
+            return node.Left == null ? node : FindMin(node.Left);
         }
 
         private static void Insert(Node<KeyValue<TKey, TValue>> node, KeyValue<TKey, TValue> value) {
