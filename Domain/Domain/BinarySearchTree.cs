@@ -27,6 +27,14 @@ namespace Domain {
             Count++;
         }
 
+        public TValue Minimum {
+            get { return FindMin(root); }
+        }
+
+        private static TValue FindMin(Node<KeyValue<TKey, TValue>> node) {
+            return node.Left == null ? node.Item.Value : FindMin(node.Left);
+        }
+
         private static void Insert(Node<KeyValue<TKey, TValue>> node, KeyValue<TKey, TValue> value) {
             if (node.Item.Key.CompareTo(value.Key) < 0) {
                 if (node.Right == null) {

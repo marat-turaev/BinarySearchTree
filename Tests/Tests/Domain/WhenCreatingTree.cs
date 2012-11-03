@@ -13,7 +13,8 @@ namespace Tests.Domain {
         [TestMethod, Ignore]
         public void TreeCanBeInitializedFromCollection() {
             var initalValues = new[] {1, 2, 3}.AsKeyValueList();
-            new BinarySearchTree<int, int>(initalValues);
+            var tree = new BinarySearchTree<int, int>(initalValues);
+            Assert.AreEqual(3, tree.Count);
         }
     }
 }
