@@ -6,7 +6,7 @@ namespace Domain {
         //TODO:
 //        TValue Search(TKey key);
 //        void Delete(TKey key);
-//        TValue Maximum();
         TValue Minimum { get; }
+        TValue Maximum { get; }
     }
 }

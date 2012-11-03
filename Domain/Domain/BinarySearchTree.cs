@@ -31,6 +31,14 @@ namespace Domain {
             get { return FindMin(root); }
         }
 
+        public TValue Maximum {
+            get { return FindMax(root); }
+        }
+
+        private static TValue FindMax(Node<KeyValue<TKey, TValue>> node) {
+            return node.Right == null ? node.Item.Value : FindMax(node.Right);
+        }
+
         private static TValue FindMin(Node<KeyValue<TKey, TValue>> node) {
             return node.Left == null ? node.Item.Value : FindMin(node.Left);
         }

@@ -45,6 +45,7 @@
     </CodeAnalysisDependentAssemblyPaths>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Domain\WhenFindingMaximum.cs" />
     <Compile Include="Domain\WhenAddingElement.cs" />
     <Compile Include="Domain\WhenEnumeratingTree.cs" />
     <Compile Include="Domain\WhenFindingMinimum.cs" />
