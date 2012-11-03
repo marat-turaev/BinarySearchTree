@@ -45,7 +45,9 @@
     </CodeAnalysisDependentAssemblyPaths>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Domain\Dsl.cs" />
+    <Compile Include="Domain\WhenAddingElement.cs" />
+    <Compile Include="Domain\WhenSearchingForElement.cs" />
+    <Compile Include="Dsl.cs" />
     <Compile Include="Domain\WhenCreatingTree.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
