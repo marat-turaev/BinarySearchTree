@@ -3,12 +3,10 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Tests.Domain {
     [TestClass]
-    public class WhenAddingElement {
+    public class WhenEnumeratingTree {
         [TestMethod]
-        public void AfterAddingIncreaseCount() {
+        public void BreadthFirstSearchEnumeratorWorks() {
             var tree = new BinarySearchTree<int, int>();
-            tree.Insert(new KeyValue<int, int>(1, 1));
-            Assert.AreEqual(1, tree.Count);
         }
     }
 }

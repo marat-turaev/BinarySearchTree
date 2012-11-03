@@ -10,4 +10,13 @@ namespace Common {
             return enumerable;
         }
     }
+
+    public static class ObjectExtentions {
+        public static T Try<T>(this T t, Action<T> action) where T : class {
+            if (t != null) {
+                action(t);
+            }
+            return t;
+        }
+    }
 }

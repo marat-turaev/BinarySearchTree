@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Domain\WhenAddingElement.cs" />
+    <Compile Include="Domain\WhenEnumeratingTree.cs" />
     <Compile Include="Domain\WhenSearchingForElement.cs" />
     <Compile Include="Dsl.cs" />
     <Compile Include="Domain\WhenCreatingTree.cs" />
