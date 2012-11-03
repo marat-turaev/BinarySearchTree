@@ -3,7 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Tests.Domain {
     [TestClass]
-    public class WhenFindingMinimum {
+    public class WhenSearchingMinimum {
         [TestMethod]
         public void CanFindMinimumInOneElementTree() {
             var tree = new BinarySearchTree<int, int>(1.AsKeyValue());

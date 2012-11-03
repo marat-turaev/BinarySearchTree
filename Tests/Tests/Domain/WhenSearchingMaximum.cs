@@ -3,7 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Tests.Domain {
     [TestClass]
-    public class WhenFindingMaximum {
+    public class WhenSearchingMaximum {
         [TestMethod]
         public void CanFindMaximumInOneElementTree() {
             var tree = new BinarySearchTree<int, int>(1.AsKeyValue());

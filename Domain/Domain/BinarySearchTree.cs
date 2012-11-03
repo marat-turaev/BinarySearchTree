@@ -27,12 +27,26 @@ namespace Domain {
             Count++;
         }
 
+        public TValue Search(TKey key) {
+            return Find(root, key);
+        }
+
         public TValue Minimum {
             get { return FindMin(root); }
         }
 
         public TValue Maximum {
             get { return FindMax(root); }
+        }
+
+        private static TValue Find(Node<KeyValue<TKey, TValue>> node, TKey key) {
+            if (node.Item.Key.Equals(key)) {
+                return node.Item.Value;
+            }
+            if (node.Item.Key.CompareTo(key) < 0) {
+                return Find(node.Right, key);
+            }
+            return Find(node.Left, key);
         }
 
         private static TValue FindMax(Node<KeyValue<TKey, TValue>> node) {
