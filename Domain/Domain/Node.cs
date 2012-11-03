@@ -1,5 +1,5 @@
 ﻿namespace Domain {
-    internal class Node<T> {
+    public class Node<T> {
         public Node(T item) {
             Item = item;
         }
