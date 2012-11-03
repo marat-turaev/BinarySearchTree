@@ -1,0 +1,9 @@
+C:\Prog\AgileCourse\Lab1\Tree\Common\bin\Debug\Common.dll
+C:\Prog\AgileCourse\Lab1\Tree\Common\bin\Debug\Common.pdb
+C:\Prog\AgileCourse\Lab1\Tree\Common\obj\Debug\Common.dll
+C:\Prog\AgileCourse\Lab1\Tree\Common\obj\Debug\Common.pdb
+C:\Prog\AgileCourse\Lab1\Common\bin\Debug\Common.dll
+C:\Prog\AgileCourse\Lab1\Common\bin\Debug\Common.pdb
+C:\Prog\AgileCourse\Lab1\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache
+C:\Prog\AgileCourse\Lab1\Common\obj\Debug\Common.dll
+C:\Prog\AgileCourse\Lab1\Common\obj\Debug\Common.pdb

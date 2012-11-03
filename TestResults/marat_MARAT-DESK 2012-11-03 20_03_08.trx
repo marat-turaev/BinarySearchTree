@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="a228cb63-be97-4caa-a182-6a32d026a5ff" name="marat@MARAT-DESK 2012-11-03 20:03:08" runUser="marat-desk\marat" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="4fc05f4d-0c9d-46fb-bbf6-0f531b32aa51">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment enabled="false" runDeploymentRoot="marat_MARAT-DESK 2012-11-03 20_03_08">
+      <DeploymentItem filename="C:\Prog\AgileCourse\Lab1\Tree\Domain\Domain\bin\Debug\Domain.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2012-11-03T20:03:08.5977365+04:00" queuing="2012-11-03T20:03:08.7257438+04:00" start="2012-11-03T20:03:08.7287440+04:00" finish="2012-11-03T20:03:08.8707521+04:00" />
+  <ResultSummary outcome="Completed">
+    <Counters total="2" executed="2" passed="2" error="0" failed="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="AfterAddingIncreaseCount" storage="c:\prog\agilecourse\lab1\tree\tests\tests\bin\debug\tests.dll" id="51952c9e-9576-78bd-8089-a1fed3e6c991">
+      <Execution id="84118957-1ad3-4551-9493-ddd3ae0414f9" />
+      <TestMethod codeBase="C:/Prog/AgileCourse/Lab1/Tree/Tests/Tests/bin/Debug/Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Tests.Domain.WhenAddingElement, Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="AfterAddingIncreaseCount" />
+    </UnitTest>
+    <UnitTest name="CountOfElemtsIsZero" storage="c:\prog\agilecourse\lab1\tree\tests\tests\bin\debug\tests.dll" id="4eda8891-00e6-a02c-cfcc-4b204338edf5">
+      <Execution id="e55341aa-b6a1-4c23-bb73-80db9c47be83" />
+      <TestMethod codeBase="C:/Prog/AgileCourse/Lab1/Tree/Tests/Tests/bin/Debug/Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Tests.Domain.WhenCreatingTree, Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="CountOfElemtsIsZero" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="4eda8891-00e6-a02c-cfcc-4b204338edf5" executionId="e55341aa-b6a1-4c23-bb73-80db9c47be83" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="51952c9e-9576-78bd-8089-a1fed3e6c991" executionId="84118957-1ad3-4551-9493-ddd3ae0414f9" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="e55341aa-b6a1-4c23-bb73-80db9c47be83" testId="4eda8891-00e6-a02c-cfcc-4b204338edf5" testName="CountOfElemtsIsZero" computerName="MARAT-DESK" duration="00:00:00.0104785" startTime="2012-11-03T20:03:08.7307441+04:00" endTime="2012-11-03T20:03:08.8487508+04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e55341aa-b6a1-4c23-bb73-80db9c47be83">
+    </UnitTestResult>
+    <UnitTestResult executionId="84118957-1ad3-4551-9493-ddd3ae0414f9" testId="51952c9e-9576-78bd-8089-a1fed3e6c991" testName="AfterAddingIncreaseCount" computerName="MARAT-DESK" duration="00:00:00.0005424" startTime="2012-11-03T20:03:08.8507510+04:00" endTime="2012-11-03T20:03:08.8527511+04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="84118957-1ad3-4551-9493-ddd3ae0414f9">
+    </UnitTestResult>
+  </Results>
+</TestRun>
