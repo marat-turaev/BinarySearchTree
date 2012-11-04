@@ -8,10 +8,10 @@ namespace Tests.Domain {
         [TestMethod]
         public void AfterAddingIncreaseCount() {
             var tree = new BinarySearchTree<int, int>();
-            
+
             tree.Insert(1.AsKeyValue());
             Assert.AreEqual(1, tree.Count);
-            
+
             tree.Insert(2.AsKeyValue());
             Assert.AreEqual(2, tree.Count);
         }

@@ -1,16 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using Common;
 
 namespace Domain {
     public class BinarySearchTree<TKey, TValue> : BinaryTree<KeyValue<TKey, TValue>>, IOrderedSet<TKey, TValue>
         where TKey : IComparable<TKey> {
         public BinarySearchTree() {}
-
-        public BinarySearchTree(KeyValue<TKey, TValue> initalValue) {
-            Insert(initalValue);
-        }
 
         public BinarySearchTree(IEnumerable<KeyValue<TKey, TValue>> initalValues) {
             initalValues.ForEach(Insert);
@@ -41,7 +36,7 @@ namespace Domain {
 
         public IEnumerable<TValue> Sort() {
             var result = new List<TValue>();
-            Traverse(root, node => result.Add(node.Item.Value));
+            InfixTraverse(root, node => result.Add(node.Item.Value));
             return result;
         }
 
@@ -100,6 +95,24 @@ namespace Domain {
             return node.Parent;
         }
 
+        private static Node<KeyValue<TKey, TValue>> Find(Node<KeyValue<TKey, TValue>> node, TKey key) {
+            if (node.Item.Key.Equals(key)) {
+                return node;
+            }
+            if (node.Item.Key.CompareTo(key) < 0) {
+                return Find(node.Right, key);
+            }
+            return Find(node.Left, key);
+        }
+
+        private static Node<KeyValue<TKey, TValue>> FindMax(Node<KeyValue<TKey, TValue>> node) {
+            return node.Right == null ? node : FindMax(node.Right);
+        }
+
+        private static Node<KeyValue<TKey, TValue>> FindMin(Node<KeyValue<TKey, TValue>> node) {
+            return node.Left == null ? node : FindMin(node.Left);
+        }
+
         private static void Delete(Node<KeyValue<TKey, TValue>> node) {
             var parent = node.Parent;
             switch (node.ChildrenCount) {
@@ -128,24 +141,6 @@ namespace Domain {
                     break;
                 }
             }
-        }
-
-        private static Node<KeyValue<TKey, TValue>> Find(Node<KeyValue<TKey, TValue>> node, TKey key) {
-            if (node.Item.Key.Equals(key)) {
-                return node;
-            }
-            if (node.Item.Key.CompareTo(key) < 0) {
-                return Find(node.Right, key);
-            }
-            return Find(node.Left, key);
-        }
-
-        private static Node<KeyValue<TKey, TValue>> FindMax(Node<KeyValue<TKey, TValue>> node) {
-            return node.Right == null ? node : FindMax(node.Right);
-        }
-
-        private static Node<KeyValue<TKey, TValue>> FindMin(Node<KeyValue<TKey, TValue>> node) {
-            return node.Left == null ? node : FindMin(node.Left);
         }
 
         private static void Insert(Node<KeyValue<TKey, TValue>> node, KeyValue<TKey, TValue> value) {

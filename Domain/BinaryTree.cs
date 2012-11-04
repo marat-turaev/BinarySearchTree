@@ -30,13 +30,13 @@ namespace Domain {
             }
         }
 
-        protected static void Traverse(Node<T> node, Action<Node<T>> visit) {
+        protected static void InfixTraverse(Node<T> node, Action<Node<T>> visitor) {
             if (node.Left != null) {
-                Traverse(node.Left, visit);
+                InfixTraverse(node.Left, visitor);
             }
-            visit(node);
+            visitor(node);
             if (node.Right != null) {
-                Traverse(node.Right, visit);
+                InfixTraverse(node.Right, visitor);
             }
         }
     }

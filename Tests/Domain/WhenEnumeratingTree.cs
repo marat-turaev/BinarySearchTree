@@ -6,7 +6,7 @@ namespace Tests.Domain {
     [TestClass]
     public class WhenEnumeratingTree {
         [TestMethod]
-        public void CountMustMatchCountInTree() {
+        public void CountInEnumeratorsMustMatchCountInTree() {
             var tree = new BinarySearchTree<int, int>();
 
             tree.Insert(1.AsKeyValue());
