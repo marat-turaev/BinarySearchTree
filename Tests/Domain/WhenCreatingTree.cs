@@ -10,7 +10,7 @@ namespace Tests.Domain {
             Assert.AreEqual(0, tree.Count);
         }
 
-        [TestMethod, Ignore]
+        [TestMethod]
         public void TreeCanBeInitializedFromCollection() {
             var initalValues = new[] {1, 2, 3}.AsKeyValueList();
             var tree = new BinarySearchTree<int, int>(initalValues);

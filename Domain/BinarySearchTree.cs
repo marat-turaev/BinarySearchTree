@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Common;
 
 namespace Domain {
@@ -38,8 +39,14 @@ namespace Domain {
             return FindLeafSuccessor(node).Item.Value;
         }
 
-        public TValue Search(TKey key) {
-            return Find(root, key).Item.Value;
+        public IEnumerable<TValue> Sort() {
+            var result = new List<TValue>();
+            Traverse(root, node => result.Add(node.Item.Value));
+            return result;
+        }
+
+        public TValue this[TKey key] {
+            get { return Find(root, key).Item.Value; }
         }
 
         public void Delete(TKey key) {
@@ -60,20 +67,6 @@ namespace Domain {
             get { return FindMax(root).Item.Value; }
         }
 
-        private static Node<KeyValue<TKey, TValue>> FindLeafPredecessor(Node<KeyValue<TKey, TValue>> node) {
-            while (node.Parent != null && node.Parent.Right != node) {
-                node = node.Parent;
-            }
-            return node.Parent;
-        }
-
-        private static Node<KeyValue<TKey, TValue>> FindLeafSuccessor(Node<KeyValue<TKey, TValue>> node) {
-            while (node.Parent != null && node.Parent.Left != node) {
-                node = node.Parent;
-            }
-            return node.Parent;
-        }
-
         private void DeleteRoot() {
             switch (root.ChildrenCount) {
                 case 0: {
@@ -91,6 +84,20 @@ namespace Domain {
                     break;
                 }
             }
+        }
+
+        private static Node<KeyValue<TKey, TValue>> FindLeafPredecessor(Node<KeyValue<TKey, TValue>> node) {
+            while (node.Parent != null && node.Parent.Right != node) {
+                node = node.Parent;
+            }
+            return node.Parent;
+        }
+
+        private static Node<KeyValue<TKey, TValue>> FindLeafSuccessor(Node<KeyValue<TKey, TValue>> node) {
+            while (node.Parent != null && node.Parent.Left != node) {
+                node = node.Parent;
+            }
+            return node.Parent;
         }
 
         private static void Delete(Node<KeyValue<TKey, TValue>> node) {

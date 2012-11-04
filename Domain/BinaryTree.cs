@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Common;
 
 namespace Domain {
@@ -26,6 +27,16 @@ namespace Domain {
                 yield return node.Item;
                 node.Left.Try(queue.Enqueue);
                 node.Right.Try(queue.Enqueue);
+            }
+        }
+
+        protected static void Traverse(Node<T> node, Action<Node<T>> visit) {
+            if (node.Left != null) {
+                Traverse(node.Left, visit);
+            }
+            visit(node);
+            if (node.Right != null) {
+                Traverse(node.Right, visit);
             }
         }
     }

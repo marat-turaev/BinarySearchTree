@@ -53,6 +53,7 @@
     <Compile Include="Domain\WhenSearchingMinimum.cs" />
     <Compile Include="Domain\WhenSearching.cs" />
     <Compile Include="Domain\WhenSearchingSuccessor.cs" />
+    <Compile Include="Domain\WhenSortingTree.cs" />
     <Compile Include="DSL.cs" />
     <Compile Include="Domain\WhenCreatingTree.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
