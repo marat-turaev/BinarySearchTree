@@ -45,12 +45,71 @@ namespace Domain {
             return Find(root, key).Item.Value;
         }
 
+        public void Delete(TKey key) {
+            var node = Find(root, key);
+            if (node == root) {
+                DeleteRoot();
+            } else {
+                Delete(node);
+            }
+            Count--;
+        }
+
         public TValue Minimum {
             get { return FindMin(root).Item.Value; }
         }
 
         public TValue Maximum {
             get { return FindMax(root).Item.Value; }
+        }
+
+        private void DeleteRoot() {
+            switch (root.ChildrenCount) {
+                case 0: {
+                    root = null;
+                    break;
+                }
+                case 1: {
+                    root = root.Left ?? root.Right;
+                    break;
+                }
+                case 2: {
+                    var min = FindMin(root.Right);
+                    root.Item = min.Item;
+                    Delete(min);
+                    break;
+                }
+            }
+        }
+
+        private static void Delete(Node<KeyValue<TKey, TValue>> node) {
+            var parent = node.Parent;
+            switch (node.ChildrenCount) {
+                case 0: {
+                    if (parent.Left == node) {
+                        parent.DeleteLeftChild();
+                    }
+                    if (parent.Right == node) {
+                        parent.DeleteRightChild();
+                    }
+                    break;
+                }
+                case 1: {
+                    if (parent.Left == node) {
+                        parent.Left = node.Left ?? node.Right;
+                    }
+                    if (parent.Right == node) {
+                        parent.Right = node.Left ?? node.Right;
+                    }
+                    break;
+                }
+                case 2: {
+                    var min = FindMin(node.Right);
+                    node.Item = min.Item;
+                    Delete(min);
+                    break;
+                }
+            }
         }
 
         private static Node<KeyValue<TKey, TValue>> Find(Node<KeyValue<TKey, TValue>> node, TKey key) {
@@ -72,7 +131,7 @@ namespace Domain {
         }
 
         private static void Insert(Node<KeyValue<TKey, TValue>> node, KeyValue<TKey, TValue> value) {
-            if (node.Item.Key.CompareTo(value.Key) < 0) {
+            if (node.Item.Key.CompareTo(value.Key) <= 0) {
                 if (node.Right == null) {
                     node.Right = new Node<KeyValue<TKey, TValue>>(value);
                     return;

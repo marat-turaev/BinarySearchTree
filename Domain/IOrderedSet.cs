@@ -3,7 +3,7 @@
 namespace Domain {
     internal interface IOrderedSet<TKey, TValue> where TKey : IComparable<TKey> {
         TValue Search(TKey key);
-//        void Delete(TKey key);
+        void Delete(TKey key);
         TValue Minimum { get; }
         TValue Maximum { get; }
         void Insert(KeyValue<TKey, TValue> value);

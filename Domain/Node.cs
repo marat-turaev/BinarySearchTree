@@ -1,4 +1,6 @@
-﻿namespace Domain {
+﻿using System;
+
+namespace Domain {
     public class Node<T> {
         private Node<T> left;
         private Node<T> right;
@@ -25,6 +27,23 @@
             }
         }
 
+        public byte ChildrenCount {
+            get {
+                byte res = 0;
+                if (Left != null) res++;
+                if (Right != null) res++;
+                return res;
+            }
+        }
+
         public Node<T> Parent { get; private set; }
+
+        public void DeleteLeftChild() {
+            left = null;
+        }
+
+        public void DeleteRightChild() {
+            right = null;
+        }
     }
 }
