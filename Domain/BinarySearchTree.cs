@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using Common;
 
 namespace Domain {
-    public class BinarySearchTree<TKey, TValue> : Tree<KeyValue<TKey, TValue>>,
-                                                  IOrderedSet<TKey, TValue>
+    public class BinarySearchTree<TKey, TValue> : BinaryTree<KeyValue<TKey, TValue>>, IOrderedSet<TKey, TValue>
         where TKey : IComparable<TKey> {
         public BinarySearchTree() {}
 
@@ -30,15 +29,13 @@ namespace Domain {
         public TValue Predecessor(TKey key) {
             var node = Find(root, key);
             if (node.Left != null) return FindMax(node.Left).Item.Value;
-            //todo: go to parent
-            throw new NotImplementedException();
+            return FindLeafPredecessor(node).Item.Value;
         }
 
         public TValue Successor(TKey key) {
             var node = Find(root, key);
             if (node.Right != null) return FindMin(node.Right).Item.Value;
-            //todo: go to parent
-            throw new NotImplementedException();
+            return FindLeafSuccessor(node).Item.Value;
         }
 
         public TValue Search(TKey key) {
@@ -61,6 +58,20 @@ namespace Domain {
 
         public TValue Maximum {
             get { return FindMax(root).Item.Value; }
+        }
+
+        private static Node<KeyValue<TKey, TValue>> FindLeafPredecessor(Node<KeyValue<TKey, TValue>> node) {
+            while (node.Parent != null && node.Parent.Right != node) {
+                node = node.Parent;
+            }
+            return node.Parent;
+        }
+
+        private static Node<KeyValue<TKey, TValue>> FindLeafSuccessor(Node<KeyValue<TKey, TValue>> node) {
+            while (node.Parent != null && node.Parent.Left != node) {
+                node = node.Parent;
+            }
+            return node.Parent;
         }
 
         private void DeleteRoot() {

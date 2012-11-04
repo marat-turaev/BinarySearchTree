@@ -2,7 +2,7 @@
 using Common;
 
 namespace Domain {
-    public abstract class Tree<T> {
+    public abstract class BinaryTree<T> {
         protected Node<T> root;
 
         public IEnumerable<T> DepthFirstSearchEnumerator() {

@@ -5,7 +5,7 @@ namespace Tests.Domain {
     [TestClass]
     public class WhenSearchingPredecessor {
         [TestMethod]
-        public void CanFindSuccessor() {
+        public void CanFindPredecessor() {
             var tree = new BinarySearchTree<int, int>();
             tree.Insert(new KeyValue<int, int>(1, 2));
             tree.Insert(new KeyValue<int, int>(3, 5));
