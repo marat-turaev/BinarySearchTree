@@ -27,6 +27,20 @@ namespace Domain {
             Count++;
         }
 
+        public TValue Predecessor(TKey key) {
+            var node = Find(root, key);
+            if (node.Left != null) return FindMax(node.Left).Item.Value;
+            //todo: go to parent
+            throw new NotImplementedException();
+        }
+
+        public TValue Successor(TKey key) {
+            var node = Find(root, key);
+            if (node.Right != null) return FindMin(node.Right).Item.Value;
+            //todo: go to parent
+            throw new NotImplementedException();
+        }
+
         public TValue Search(TKey key) {
             return Find(root, key).Item.Value;
         }

@@ -7,7 +7,7 @@ namespace Domain {
         TValue Minimum { get; }
         TValue Maximum { get; }
         void Insert(KeyValue<TKey, TValue> value);
-//        TValue Predecessor(TKey key);
-//        TValue Successor(TKey key);
+        TValue Predecessor(TKey key);
+        TValue Successor(TKey key);
     }
 }
