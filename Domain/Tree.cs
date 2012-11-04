@@ -12,8 +12,8 @@ namespace Domain {
             while (stack.Count != 0) {
                 var node = stack.Pop();
                 yield return node.Item;
-                node.Left.Try(stack.Push);
                 node.Right.Try(stack.Push);
+                node.Left.Try(stack.Push);
             }
         }
 

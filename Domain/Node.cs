@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Domain {
+﻿namespace Domain {
     public class Node<T> {
         private Node<T> left;
         private Node<T> right;

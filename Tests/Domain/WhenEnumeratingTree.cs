@@ -16,5 +16,21 @@ namespace Tests.Domain {
             Assert.AreEqual(3, tree.BreadthFirstSearchEnumerator().Count());
             Assert.AreEqual(3, tree.DepthFirstSearchEnumerator().Count());
         }
+
+        [TestMethod]
+        public void CanEnumerateBreadthFirstSearch() {
+            var tree = new BinarySearchTree<int, int>(new[] {3, 2, 1, 2, 4, 3}.AsKeyValueList());
+
+            var expected = new[] {3, 2, 4, 1, 2, 3};
+            CollectionAssert.AreEqual(expected, tree.BreadthFirstSearchEnumerator().Select(_ => _.Value).ToList());
+        }
+
+        [TestMethod]
+        public void CanEnumerateDepthFirstSearch() {
+            var tree = new BinarySearchTree<int, int>(new[] {3, 2, 1, 2, 4, 3}.AsKeyValueList());
+
+            var expected = new[] {3, 2, 1, 2, 4, 3};
+            CollectionAssert.AreEqual(expected, tree.DepthFirstSearchEnumerator().Select(_ => _.Value).ToList());
+        }
     }
 }

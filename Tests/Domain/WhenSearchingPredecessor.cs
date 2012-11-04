@@ -3,7 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Tests.Domain {
     [TestClass]
-    public class WhenSearchinPredecessor {
+    public class WhenSearchingPredecessor {
         [TestMethod]
         public void CanFindSuccessor() {
             var tree = new BinarySearchTree<int, int>();
