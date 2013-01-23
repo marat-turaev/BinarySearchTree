@@ -56,14 +56,21 @@
     <Compile Include="Domain\WhenSortingTree.cs" />
     <Compile Include="DSL.cs" />
     <Compile Include="Domain\WhenCreatingTree.cs" />
+    <Compile Include="Fakes\FakeLogger.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModel\WhenIteratingThroughViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Client\ViewModel\ViewModel.csproj">
+      <Project>{38709758-deb1-4089-be3e-51ec445000dc}</Project>
+      <Name>ViewModel</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Domain\Domain.csproj">
       <Project>{DAFEB7CD-F9FE-45D6-922B-377FA73DC1B6}</Project>
       <Name>Domain</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

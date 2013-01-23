@@ -1,15 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>8.0.30703</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{DAFEB7CD-F9FE-45D6-922B-377FA73DC1B6}</ProjectGuid>
+    <ProjectGuid>{BCDFF40D-FDD7-47FC-B1E8-CD69EBCBA0AC}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Domain</RootNamespace>
-    <AssemblyName>Domain</AssemblyName>
+    <RootNamespace>Infrastructure</RootNamespace>
+    <AssemblyName>Infrastructure</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -40,18 +39,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ILogger.cs" />
-    <Compile Include="IOrderedSet.cs" />
-    <Compile Include="KeyValue.cs" />
-    <Compile Include="Node.cs" />
+    <Compile Include="HtmlLogger.cs" />
+    <Compile Include="PlainTextLogger.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="BinarySearchTree.cs" />
-    <Compile Include="BinaryTree.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Common\Common.csproj">
-      <Project>{B4D96FFE-349D-444A-97F5-E29457FA68A5}</Project>
-      <Name>Common</Name>
+    <ProjectReference Include="..\Domain\Domain.csproj">
+      <Project>{dafeb7cd-f9fe-45d6-922b-377fa73dc1b6}</Project>
+      <Name>Domain</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

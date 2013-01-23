@@ -1,9 +1,10 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using Common;
 
 namespace Domain {
-    public abstract class BinaryTree<T> {
+    public abstract class BinaryTree<T> : IEnumerable<T> {
         protected Node<T> root;
 
         public IEnumerable<T> DepthFirstSearchEnumerator() {
@@ -38,6 +39,14 @@ namespace Domain {
             if (node.Right != null) {
                 InfixTraverse(node.Right, visitor);
             }
+        }
+
+        public IEnumerator<T> GetEnumerator() {
+            return BreadthFirstSearchEnumerator().GetEnumerator();
+        }
+
+        IEnumerator IEnumerable.GetEnumerator() {
+            return GetEnumerator();
         }
     }
 }
