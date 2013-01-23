@@ -1,11 +1,12 @@
-﻿using Domain;
+﻿using System;
+using Domain;
 using Infrastructure;
 
 namespace ViewModel {
     public class MainViewModel {
-        private ILogger logger;
+        private Logger logger;
 
-        public MainViewModel(ILogger logger) {
+        public MainViewModel(Logger logger) {
             this.logger = logger;
             Tree = new BinarySearchTree<int, int>();
         }
@@ -41,6 +42,10 @@ namespace ViewModel {
 
         public void ToPlainText() {
             logger = new PlainTextLogger();
+        }
+
+        public string FullLog {
+            get { return string.Join(Environment.NewLine, logger.Logs); }
         }
     }
 }

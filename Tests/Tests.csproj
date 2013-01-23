@@ -58,7 +58,7 @@
     <Compile Include="Domain\WhenCreatingTree.cs" />
     <Compile Include="Fakes\FakeLogger.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewModel\WhenIteratingThroughViewModel.cs" />
+    <Compile Include="ViewModel\ViewModelTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Client\ViewModel\ViewModel.csproj">

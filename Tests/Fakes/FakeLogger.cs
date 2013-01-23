@@ -2,15 +2,8 @@
 using Domain;
 
 namespace Tests.Fakes {
-    public class FakeLogger : ILogger {
-        private readonly List<string> logs = new List<string>();
-
-        public void Log(string logString) {
-            logs.Add(logString);
-        }
-
-        public bool WasLogged(string logString) {
-            return logs.Contains(logString);
+    public class FakeLogger : Logger {
+        protected override void WriteLog(string logString) {
         }
     }
 }

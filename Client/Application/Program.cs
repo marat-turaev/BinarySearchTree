@@ -2,6 +2,7 @@
 using Infrastructure;
 using View;
 using ViewModel;
+using WpfClient;
 
 namespace Application {
     internal static class Program {
@@ -12,7 +13,8 @@ namespace Application {
         private static void Main() {
             System.Windows.Forms.Application.EnableVisualStyles();
             System.Windows.Forms.Application.SetCompatibleTextRenderingDefault(false);
-            System.Windows.Forms.Application.Run(new MainForm(new MainViewModel(new PlainTextLogger())));
+            var form = new MainForm(new MainViewModel(new PlainTextLogger()));
+            System.Windows.Forms.Application.Run(form);
         }
     }
 }
